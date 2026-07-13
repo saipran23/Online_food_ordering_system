@@ -1,62 +1,38 @@
 <?php
+session_start();
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "test_db";
+$servername = getenv('DB_HOST') ?: 'localhost';
+$dbUser = getenv('DB_USER') ?: 'root';
+$dbPassword = getenv('DB_PASS') ?: '';
+$dbname = getenv('DB_NAME') ?: 'test_db';
 
-// Establishing connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-if($conn->connect_error){
-    die("Connection failed".$conn->connect_error);
-}
-
-
-
-
-    if (isset($_POST['submit'])) {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-
-        $sql = "select * from Coffee_db where username = '$username' and password = '$password'";  
-        $result = mysqli_query($conn, $sql);  
-        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
-        $count = mysqli_num_rows($result);  
-        
-        if($count == 1){  
-
-            echo  '<script>
-            window.location.href = "index.php";
-            alert("Login Successfully")
-        </script>';
-
-
-           // header("Location: index.php");
-        }  
-        else{  
-            echo  '<script>
-                        window.location.href = "index.php";
-                        alert("Login failed. Invalid username or password!!")
-                    </script>';
-        }     
-    }
-    
-
-
-/*
-// Checking connection
+$conn = mysqli_connect($servername, $dbUser, $dbPassword, $dbname);
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+    die('Connection failed: ' . mysqli_connect_error());
 }
 
-// Checking if form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['new-username'];
-    $password = $_POST['new-password'];
-   $location = $_POST['new-location'];
-    $email = $_POST['new-email'];*/
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $submittedUsername = trim($_POST['username'] ?? '');
+    $submittedPassword = trim($_POST['password'] ?? '');
 
+    $stmt = mysqli_prepare($conn, 'SELECT username FROM Coffee_db WHERE username = ? AND password = ?');
+    if (!$stmt) {
+        die('Login query failed: ' . mysqli_error($conn));
+    }
 
+    mysqli_stmt_bind_param($stmt, 'ss', $submittedUsername, $submittedPassword);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_store_result($stmt);
 
+    if (mysqli_stmt_num_rows($stmt) === 1) {
+        $_SESSION['username'] = $submittedUsername;
+        echo '<script>alert("Login Successfully"); window.location.href = "index.php";</script>';
+        exit();
+    }
 
+    echo '<script>alert("Login failed. Invalid username or password!!"); window.location.href = "login.php";</script>';
+    exit();
+}
+
+mysqli_close($conn);
 ?>

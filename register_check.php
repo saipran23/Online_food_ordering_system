@@ -1,45 +1,41 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "test_db";
+$servername = getenv('DB_HOST') ?: 'localhost';
+$dbUser = getenv('DB_USER') ?: 'root';
+$dbPassword = getenv('DB_PASS') ?: '';
+$dbname = getenv('DB_NAME') ?: 'test_db';
 
-    // Establishing connection
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $dbUser, $dbPassword, $dbname);
 
-    // Checking connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+if (!$conn) {
+    die('Connection failed: ' . mysqli_connect_error());
+}
 
-    // Checking if form is submitted
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $username = $_POST['new-username'];
-        $password = $_POST['new-password'];
-       $location = $_POST['new-location'];
-        $email = $_POST['new-email'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $submittedUsername = trim($_POST['new-username'] ?? '');
+    $submittedPassword = trim($_POST['new-password'] ?? '');
+    $submittedLocation = trim($_POST['new-location'] ?? '');
+    $submittedEmail = trim($_POST['new-email'] ?? '');
 
-        if (empty($username)) {
-            echo "Please enter a username";
-        } elseif (empty($password)) {
-            echo "Please enter a password";
-        } else {
-            $sql = "INSERT INTO Coffee_db (username, password, location, email)
-                    VALUES ('$username', '$password', '$location', '$email')";
-            if (mysqli_query($conn, $sql)) {
-           /* //    echo "<script>alert('Succesfully login')</script>";
-                echo "<script>alert('Successfully registered')</script>";
-                header("location: index.php"); // Redirect to homepage after successful insertion
-                exit(); // Exit to prevent further execution of PHP code */
-                echo "<script>alert('Successfully registered');
-                window.location.href = 'index.php';</script>";
-          exit();
-            } else {
-                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-            }
+    if ($submittedUsername === '') {
+        echo 'Please enter a username';
+    } elseif ($submittedPassword === '') {
+        echo 'Please enter a password';
+    } else {
+        $stmt = mysqli_prepare($conn, 'INSERT INTO Coffee_db (username, password, location, email) VALUES (?, ?, ?, ?)');
+        if (!$stmt) {
+            die('Registration query failed: ' . mysqli_error($conn));
         }
-    }
 
-    // Closing connection
-    mysqli_close($conn);
+        mysqli_stmt_bind_param($stmt, 'ssss', $submittedUsername, $submittedPassword, $submittedLocation, $submittedEmail);
+
+        if (mysqli_stmt_execute($stmt)) {
+            echo "<script>alert('Successfully registered'); window.location.href = 'index.php';</script>";
+            exit();
+        }
+
+        echo 'Error: ' . mysqli_error($conn);
+    }
+}
+
+mysqli_close($conn);
 ?>
