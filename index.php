@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- bootstrap links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- bootstrap links -->
+    <!-- fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <!-- fonts links -->
+    <!-- jquery link-->
+    <script type="text/javascript" src="jquery.js">  
+     </script>  
+      <script type="text/javascript" language="javascript">  
+     $(document).ready(function() {  
+     $("h2").css("color", "red"); 
+     });  
+     </script>  
+</head>
+<body>
+  <div class="all-content">
+   
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" id="logo"><img src="./images/logo2.jpg" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fa-solid fa-bars" style="color: white; font-size: 23px;"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#menu">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#product">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gallary">Gallary</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#blogs">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.php">Login</a>
+          </li>
+        </ul>
+         
+        <div class="cart-container">
+          <a href="#" class="nav-link cart-icon" id="cartIcon"><i class="fas fa-shopping-cart"></i><span class="badge bg-secondary" id="cartCount">0</span></a>
+        </div>
+
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+  <!-- navbar -->
+        
+<!-- home section -->
+   <section id="home">
+    <div class="content">
+      <h3>Welcome to our INDIAN <br> Restaurant</h3>
+      <p>Experience the Symphony of Flavours
+      </p>
+      <button id="btn">Shop Now</button>
+    </div>
+   </section>
+
+<!-- home section -->
+
+
+
+<!-- about section -->
+<div class="about" id="about">
+  <div class="container">
+  <div class="heading">About <span>Us</span></div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <img src="./images/about_us.webp" alt="">
+        </div>
+      </div>
+      <div class="col-md-6">
+
+        <h2>What makes our restuarent so special</h2>
+        <p>It could serve food that is not found anywhere else, it could have an atmosphere that is different from other restaurants, or it could offer a service that is not offered at other restaurants
+          <br><br>We believe that great food starts with great ingredients. That's why we partner with local farmers and producers to source the freshest, highest-quality ingredients available.
+          <br><br>
+         </p>
+         <button id="about-btn">Learn More.</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- about section -->
+
+
+   
+
+
+
+<!-- top cards -->
+<section class="top-cards">
+  <div class="heading2">Top <span>Categories</span></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img src="./images/c1.avif" alt="">
+          
+        </div>
+      </div>
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img src="./images/c2.avif" alt="">
+          
+        </div>
+      </div>
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img src="./images/c3.avif" alt="">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- top cards -->
+
+
+
+
+
+
+<!-- menu -->
+<section class="menu" id="menu">
+  <div class="container">
+  <div class="heading3">Menu</div>
+</div>
+  <div class="container" id="container2">
+  <div class="row">
+    <div class="col-md-3 py-3 py-md-0">
+      <div class="card">
+        <img src="./images/menu11.avif" alt="">
+        <div class="card-body">
+          <div class="star text-center">
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <h3>Biryani</h3>
+          <p>$300 <strike>$450</strike> <span><i class="fa-solid fa-cart-shopping"></i></span></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 py-3 py-md-0">
+      <div class="card">
+        <img src="./images/menu122.avif" alt="">
+        <div class="card-body">
+          <div class="star text-center">
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <h3>Special Biryani</h3>
+          <p>$400<strike>$540</strike> <span><i class="fa-solid fa-cart-shopping"></i></span></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 py-3 py-md-0">
+      <div class="card">
+        <img src="./images/menu13.avif" alt="">
+        <div class="card-body">
+          <div class="star text-center">
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <h3>Chicken lollipop</h3>
+          <p>$250 <strike>$390</strike> <span><i class="fa-solid fa-cart-shopping"></i></span></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 py-3 py-md-0">
+      <div class="card">
+        <img src="./images/menu14.avif" alt="">
+        <div class="card-body">
+          <div class="star text-center">
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <h3>Dum Biryani</h3>
+          <p>$299 <strike>$499</strike> <span><i class="fa-solid fa-cart-shopping"></i></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 50px;">
+    <div class="col-md-3 py-3 py-md-0">
+      <div class="card">
+        <img src="./images/menu15.jpeg" alt="">
+        <div class="card-body">
+          <div class="star text-center">
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <h3>Kaju Fried Rice</h3>
+          <p>$200 <strike>$300</strike> <span><i class="fa-solid fa-cart-shopping"></i></span></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 py-3 py-md-0">
+      <div class="card">
+        <img src="./images/menu16.jpeg" alt="">
+        <div class="card-body">
+          <div class="star text-center">
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <h3>Punjabi Thali</h3>
+          <p>$230 <strike>$450</strike> <span><i class="fa-solid fa-cart-shopping"></i></span></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 py-3 py-md-0">
+      <div class="card">
+        <img src="./images/menu177.avif" alt="">
+        <div class="card-body">
+          <div class="star text-center">
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <h3>Paneer Thikka Masala</h3>
+          <p>$300 <strike>$500</strike> <span><i class="fa-solid fa-cart-shopping"></i></span></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 py-3 py-md-0">
+      <div class="card">
+        <img src="./images/menu18.jpeg" alt="">
+        <div class="card-body">
+          <div class="star text-center">
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <h3>Puri Bhaji</h3>
+          <p>$120 <strike>$150</strike> <span><i class="fa-solid fa-cart-shopping"></i></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<!-- menu -->
+
+
+
+
+
+
+
+
+<!-- Top Brands -->
+<section id="product" class="product">
+  <div class="container">
+  <div class="heading4">Products</div>
+</div>
+<div class="container" id="container3">
+
+    <div class="row">
+        <div class="card">
+          <div class="container" id="container3">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div class="brand-title mb-5">
+                          <h5 class="h5-title">Trusted by 70+ companies</h5>
+                      </div>
+                      <div class="brands-row">
+                          <div class="brands-box">
+                              <img src="images/brands/b1.png" alt="">
+                          </div>
+                          <div class="brands-box">
+                              <img src="images/brands/b2.png" alt="">
+                          </div>
+                          <div class="brands-box">
+                              <img src="images/brands/b3.png" alt="">
+                    </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!--Top Brands-->
+
+
+<!-- our gallary -->
+<div class="container" id="gallary">
+  <h1>Our <span>Gallary</span></h1>
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-4 py-3 py-md-0">
+      <div class="card">
+        <img src="./images/gallery1.jpeg" alt="">
+      </div>
+    </div>
+    <div class="col-md-4 py-3 py-md-0">
+      <div class="card">
+        <img src="./images/gallery4.jpeg" alt="">
+      </div>
+    </div>
+    <div class="col-md-4 py-3 py-md-0">
+      <div class="card">
+        <img src="./images/gallery6.jpg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-4 py-3 py-md-0">
+      <div class="card">
+        <img src="./images/gallery3.jpeg" alt="">
+      </div>
+    </div>
+    <div class="col-md-4 py-3 py-md-0">
+      <div class="card">
+        <img src="./images/gallery7.jpeg" alt="">
+      </div>
+    </div>
+    <div class="col-md-4 py-3 py-md-0">
+      <div class="card">
+        <img src="./images/gallery2.jpeg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- our gallary -->
+
+
+
+
+<!-- contact -->
+<section class="contact" id="contact">
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+       <div class="heading6">Contact <span>Us</span></div>
+
+       <p>We love to hear you contact us in below timings
+        <br>contact through details mention in envelope
+       </p>
+       <div class="opening-hours-box">
+  <h3>Opening Hours</h3>
+  <ul>
+
+    <li>Monday-Thursday: 9:00am - 5:00pm</li>
+    <li>Friday-Sunday: 11-am-6pm</li>
+  </ul>
+</div>
+
+</div>
+     
+      <div class="col-md-3"></div>
+      <div class="col-md-5" id="col">
+        <h1>Info</h1>
+        <p><i class="fa-regular fa-envelope"></i> restaurant@gmail.com</p>
+        <p><i class="fa-solid fa-phone"></i> +92000000000000000</p>
+       <p><i class="fa-solid fa-building-columns"></i> c/o Reliance Retail Limited SS Plaza<br>74/2 Outer Ring Road,BTM Layout,Bangalore-560068</p>
+       <p>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- contact -->
+
+
+   <!-- blogs -->
+   <section class="blogs" id="blogs">
+    <h1>Latest <span>Blogs</span></h1>
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img src="./images/blog1.jpeg" alt="" height=240px >
+          <div class="card-body">
+            <h3>Symphony of Flavours</h3>
+            <h5>Admin / 10 june 2024</h5>
+            <p>Behind every exquisite dish at Restaurent Food and Drinks lies a carefully curated selection of the finest ingredients. From farm-fresh produce sourced locally to exotic spices handpicked from distant lands to create a symphony of flavors on your palate.</p>
+            <button id="blogbtn">Read More.</button>
+          </div>
+        </div>  
+        </div>
+        <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img src="./images/blog2.jpg" alt="">
+          <div class="card-body">
+            <h3>A guide to Japanese <br>flavours</h3>
+            <h5>Admin / 10 June 2024</h5>
+            <p>Japanese culinary tradition relies on flavours and ingredients deeply rooted in history and cultural significance. Here we explore some traditional Japanese flavours, that have stood the test of time and continue to captivate taste buds worldwide..</p>
+            <button id="blogbtn">Read More.</button>
+          </div>
+        </div>  
+        </div>
+        <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img src="./images/blog3.jpg" alt="">
+          <div class="card-body">
+            <h3>London mocktails to toast Dry june 2024</h3>
+            <h5>Admin / 10 June 2024</h5>
+            <p>Whether you overindulged in May and are making up for it with Dry January, or you're alcohol-free all year round, we have a range of delicious soft cocktails for you at Flesh & Buns.</p>
+            <button id="blogbtn">Read More.</button>
+          </div>
+        </div>  
+        </div>
+        
+      </div>
+
+    </div>
+
+
+   </section>
+   <!-- blogs -->
+
+
+
+
+
+
+
+   <!-- footer -->
+   <footer id="footer">
+    <div class="footer-logo text-center"><img src="./images/logo2.jpg" alt=""></div>
+    <div class="socail-links text-center">
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-youtube"></i>
+      <i class="fa-brands fa-pinterest-p"></i>
+    </div>
+    <div class="credite text-center">
+        Designed By <a href="#">RKV Students</a>
+    </div>
+    <div class="copyright text-center">
+      &copy; Copyright <strong><span>Restaurnet Foods and Drinks Shop</span></strong>. All Rights Reserved
+  </div>
+</footer>
+   <!-- footer -->
+
+   <a href="#" class="arrow"><i><img src="./images/up-arrow.png" alt="" width="50px"></i></a>
+
+
+  </div>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <!-- rest of your content -->
+
+  <!-- Modal to display cart items -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="cartItems">
+          <!-- Cart items will be displayed here -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript to handle cart functionality -->
+  <script>
+   /* document.addEventListener('DOMContentLoaded', function () {
+      const cartIcon = document.getElementById('cartIcon');
+      const cartCount = document.getElementById('cartCount');
+      const cartModal = new bootstrap.Modal(document.getElementById('cartModal'));
+      const cartItemsContainer = document.getElementById('cartItems');
+      let itemCount = 0;
+
+      // Function to add item to cart
+      function addToCart() {
+        itemCount++;
+        cartCount.textContent = itemCount;
+      }
+
+      // Function to display cart items
+      function showCart() {
+        cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+        // Logic to display items in the cart will go here
+      }
+
+      // Add click event listener to cart icon
+      cartIcon.addEventListener('click', function () {
+        showCart();
+        cartModal.show();
+      });
+
+      // Add click event listener to each product item
+      const productItems = document.querySelectorAll('.card');
+      productItems.forEach(item => {
+        item.addEventListener('click', addToCart);
+      });
+    });*/
+
+
+
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const cartIcon = document.getElementById('cartIcon');
+      const cartCount = document.getElementById('cartCount');
+      const cartModal = new bootstrap.Modal(document.getElementById('cartModal'));
+      const cartItemsContainer = document.getElementById('cartItems');
+      let itemCount = 0;
+      let cartItems = [];
+
+      // Function to add item to cart
+      function addToCart(name, cost) {
+        itemCount++;
+        cartCount.textContent = itemCount;
+        cartItems.push({ name: name, cost: cost });
+        showCart();
+      }
+
+      // Function to display cart items
+      function showCart() {
+        cartItemsContainer.innerHTML = '';
+        if (cartItems.length === 0) {
+          cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+        } else {
+          cartItems.forEach(item => {
+            const cartItemElement = document.createElement('div');
+            cartItemElement.textContent = `${item.name} - $${item.cost.toFixed(2)}`;
+            cartItemsContainer.appendChild(cartItemElement);
+          });
+        }
+      }
+
+      // Add click event listener to cart icon
+      cartIcon.addEventListener('click', function () {
+        showCart();
+        cartModal.show();
+      });
+
+      // Add click event listener to each product item
+      const productItems = document.querySelectorAll('.card');
+      productItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const itemName = item.querySelector('h3').textContent;
+          const itemCostText = item.querySelector('p').textContent;
+          const itemCostMatch = itemCostText.match(/\$(\d+(\.\d+)?)/);
+          const itemCost = itemCostMatch ? parseFloat(itemCostMatch[1]) : 0;
+          addToCart(itemName, itemCost);
+        });
+      });
+    });
+</script>
+
+
+</body>
+</html>
